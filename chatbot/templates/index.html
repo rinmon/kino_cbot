@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPTチャットボット</title>
+    <title>KINO cbot</title>
 </head>
 <body>
-    <h1>ChatGPTチャットボット</h1>
+    <h1>KINO cbot</h1>
     <form action="{% url 'chatbot:index' %}" method="post">
         {% csrf_token %}
         <label for="user_input">メッセージを入力:</label>
@@ -14,7 +14,7 @@
         <button type="submit">送信</button>
     </form>
     {% if chatbot_response %}
-        <p><strong>ボットの応答:</strong> {{ chatbot_response }}</p>
+        <p><strong>CBOTの応答:</strong> {{ chatbot_response }}</p>
     {% endif %}
 </body>
 </html>
