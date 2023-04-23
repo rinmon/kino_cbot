@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPTチャットボット</title>
+</head>
+<body>
+    <h1>ChatGPTチャットボット</h1>
+    <form action="{% url 'chatbot:index' %}" method="post">
+        {% csrf_token %}
+        <label for="user_input">メッセージを入力:</label>
+        <input type="text" name="user_input" id="user_input" required>
+        <button type="submit">送信</button>
+    </form>
+    {% if chatbot_response %}
+        <p><strong>ボットの応答:</strong> {{ chatbot_response }}</p>
+    {% endif %}
+</body>
+</html>
